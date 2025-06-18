@@ -55,11 +55,11 @@ The built files will be available in the `dist` folder.
 ## Usage
 
 1. **Launch the application**
-2. **Scan QR Code**: Use your phone's WhatsApp to scan the QR code displayed in the app
-3. **Wait for Connection**: The app will connect to WhatsApp Web
-4. **Manage Contacts**: Import and organize your contacts
-5. **Create Messages**: Use the message composer to create broadcast messages
-6. **Send Messages**: Select recipients and send your broadcast messages
+2. **Scan QR Code**: Use your phone's WhatsApp to scan the QR code displayed in the app.
+3. **Wait for Connection**: The app will connect to WhatsApp Web.
+4. **Manage Contacts**: Import and organize your contacts.
+5. **Create Messages**: Use the message composer to create broadcast messages.
+6. **Send Messages**: Select recipients and send your broadcast messages.
 
 ## Technology Stack
 
