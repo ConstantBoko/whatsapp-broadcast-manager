@@ -71,8 +71,8 @@ The built files will be available in the `dist` folder.
 ## Project Structure
 
 ```
-├── electron/           # Electron main process
-│   └── main.js        # Main Electron application
+├── electron/           # Electron main process.
+│   └── main.js        # Main Electron application.
 ├── src/               # React application source
 │   ├── components/    # React components
 │   ├── types/         # TypeScript type definitions
