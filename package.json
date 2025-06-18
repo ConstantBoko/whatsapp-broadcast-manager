@@ -1,0 +1,91 @@
+{
+  "name": "whatsapp-broadcast-manager",
+  "version": "1.0.0",
+  "homepage": "./",
+  "private": true,
+  "main": "electron/main.js",
+  "description": "Desktop WhatsApp broadcast manager built with React & Electron",
+  "author": "",
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.3",
+    "@mui/material": "^5.14.3",
+    "qrcode-terminal": "^0.12.0",
+    "qrcode.react": "^3.1.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "typescript": "^4.9.5",
+    "whatsapp-web.js": "^1.21.0"
+  },
+  "devDependencies": {
+    "electron": "^25.3.1",
+    "@types/node": "^16.18.39",
+    "@types/qrcode.react": "^1.0.5",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "electron-builder": "^24.6.3",
+    "react-scripts": "5.0.1",
+    "wait-on": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron": "electron .",
+    "dev": "concurrently \"cross-env BROWSER=none PORT=3000 npm start\" \"wait-on http://localhost:3000 && npm run electron\"",
+    "pack": "npm run build && electron-builder --dir",
+    "dist": "npm run build && electron-builder",
+    "dist:portable": "npm run build && electron-builder --win portable --x64"
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.whatsapp.broadcast",
+    "asar": false,
+    "files": [
+      "electron/**/*",
+      "build/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": [
+        "portable",
+        "zip"
+      ],
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "asarUnpack": [
+      "**/node_modules/puppeteer/**",
+      "**/node_modules/puppeteer-core/**"
+    ],
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
